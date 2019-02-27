@@ -1,4 +1,0 @@
-﻿  matrix.cpp
-c:\users\elnin\documents\visual studio 2015\projects\consoleapplication8\consoleapplication8\matrix.cpp(93): warning C4715: 'Matrix::Transpose': not all control paths return a value
-  ConsoleApplication8.vcxproj -> c:\users\elnin\documents\visual studio 2015\Projects\ConsoleApplication8\Debug\ConsoleApplication8.exe
-  ConsoleApplication8.vcxproj -> c:\users\elnin\documents\visual studio 2015\Projects\ConsoleApplication8\Debug\ConsoleApplication8.pdb (Full PDB)
