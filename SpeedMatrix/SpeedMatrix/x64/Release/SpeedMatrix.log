@@ -1,0 +1,9 @@
+﻿  main.cpp
+  matrix.cpp
+  profile.cpp
+  Generating code
+c:\users\elnin\documents\visual studio 2015\projects\speedmatrix\speedmatrix\matrix.cpp(92): warning C4715: 'Matrix::Transpose': not all control paths return a value
+  All 274 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  SpeedMatrix.vcxproj -> c:\users\elnin\documents\visual studio 2015\Projects\SpeedMatrix\x64\Release\SpeedMatrix.exe
+  SpeedMatrix.vcxproj -> c:\users\elnin\documents\visual studio 2015\Projects\SpeedMatrix\x64\Release\SpeedMatrix.pdb (Full PDB)
