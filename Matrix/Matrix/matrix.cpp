@@ -1,4 +1,5 @@
  #include "matrix.h"
+#include "profile.h"
 
 std::istream& operator>>(std::istream& input_stream, Matrix& matrix)
 {
@@ -93,7 +94,7 @@ Matrix Matrix::Transpose() const
 
 
 Matrix Matrix::operator*(const Matrix& rhs)
-{
+{LOG DURATION("matrix")
 	Matrix new_matrix(data_.size(), rhs.GetWidth());
 
 	int element = 0;

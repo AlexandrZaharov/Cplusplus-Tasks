@@ -1,0 +1,6 @@
+﻿  main.cpp
+  HashTable.cpp
+c:\users\elnin\documents\visual studio 2015\projects\hashtable\hashtable\hashtable.cpp(89): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  HashTable.vcxproj -> c:\users\elnin\documents\visual studio 2015\Projects\HashTable\x64\Debug\HashTable.exe
+  HashTable.vcxproj -> c:\users\elnin\documents\visual studio 2015\Projects\HashTable\x64\Debug\HashTable.pdb (Full PDB)
