@@ -5,6 +5,13 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication8", "ConsoleApplication8\ConsoleApplication8.vcxproj", "{4993211F-EB21-4358-8448-A438D0807165}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E927E3BE-8D01-4F70-B4F4-51754B528B6D}"
+	ProjectSection(SolutionItems) = preProject
+		Matrix\main.cpp = Matrix\main.cpp
+		Matrix\matrix.cpp = Matrix\matrix.cpp
+		Matrix\matrix.h = Matrix\matrix.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

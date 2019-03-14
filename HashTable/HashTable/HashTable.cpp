@@ -51,9 +51,9 @@ bool HashTable::Has(const std::string& string) const
 }
 
 
-int HashTable::GetHash(const std::string& string) const
+int HashTable::GetHash(const std::string& value) const
 {
-    return GetHash5(string) % data_.size();
+    return GetHash4(value);
 }
 
 
@@ -69,25 +69,25 @@ size_t HashTable::GetSize(const int word_hash) const
 }
 
 
-int HashTable::GetHash1(const std::string& value) const
+int GetHash1(const std::string& value) 
 {
     return 1;
 }
 
 
-int HashTable::GetHash2(const std::string& value) const
+int GetHash2(const std::string& value) 
 {
     return value[0] - 0;
 }
 
 
-int HashTable::GetHash3(const std::string& value) const
+int GetHash3(const std::string& value) 
 {
     return value.size();
 }
 
 
-int HashTable::GetHash4(const std::string& value) const
+int GetHash4(const std::string& value) 
 {
     int hash = 0;
     for (int i = 0; i < value.size(); i++)
@@ -98,7 +98,7 @@ int HashTable::GetHash4(const std::string& value) const
 }
 
 
-int HashTable::GetHash5(const std::string& value) const
+int GetHash5(const std::string& value)
 {
     int hash = 0;
     for (int i = 0; i < value.size(); i++)
@@ -109,7 +109,7 @@ int HashTable::GetHash5(const std::string& value) const
 }
 
 
-int HashTable::GetHash6(const std::string& value) const
+int GetHash6(const std::string& value)
 {
     if (value.size() == 0)
     {
