@@ -6,7 +6,7 @@
 std::string EncodeString(const std::string& string_to_encode)
 {
     std::string encoded_string = string_to_encode;
-    for (int i = 0; i < encoded_string.size(); i++)
+    for (size_t i = 0; i < encoded_string.size(); i++)
     {
         encoded_string[i] += (i + 1);
     }
@@ -17,7 +17,7 @@ std::string EncodeString(const std::string& string_to_encode)
 std::string DecodeString(const std::string& string_to_decode)
 {
     std::string decoded_string = string_to_decode;
-    for (int i = 0; i < decoded_string.size(); i++)
+    for (size_t i = 0; i < decoded_string.size(); i++)
     {
         decoded_string[i] -= (i + 1);
     }
@@ -33,7 +33,7 @@ int GetHashFromString(const std::string& value)
     }
 
     int hash = value[0];
-    for (int i = 1; i < value.size(); i++)
+    for (size_t i = 1; i < value.size(); i++)
     {
         hash = (hash << 1) ^ value[i];
     }
@@ -53,6 +53,7 @@ void PasswordStorageBeginning()
         << " - change password, press 3" << "\n";
 
 }
+
 
 bool CheckUserPassword(PasswordStorage storage)
 {
@@ -80,20 +81,34 @@ bool CheckUserPassword(PasswordStorage storage)
    
 int main()
 {
-    int pairs_number = 5;
+    const int pairs_number = 5;
     PasswordStorage pairs(pairs_number);
 
-    std::pair<std::string, std::string> pair_1 = { "Christopher" , "TheDarkKnight" };
-    std::pair<std::string, std::string> pair_2 = { "David", "GoneGirl" };
-    std::pair<std::string, std::string> pair_3 = { "Yuriy", "Durak" };
-    std::pair<std::string, std::string> pair_4 = { "Roman", "InadequatePeople" };
-    std::pair<std::string, std::string> pair_5 = { "Quentin", "IngloriousBastards" };
-
+    PasswordStorageEntry pair_1;
+    pair_1.nickname = "Christopher";
+    pair_1.password = "TheDarkKnight";
     pairs.Add(pair_1);
+
+    PasswordStorageEntry pair_2;
+    pair_2.nickname = "David";
+    pair_2.password = "GoneGirl";
     pairs.Add(pair_2);
+
+    PasswordStorageEntry pair_3;
+    pair_3.nickname = "Yuriy";
+    pair_3.password = "Durak";
     pairs.Add(pair_3);
+
+    PasswordStorageEntry pair_4;
+    pair_4.nickname = "Quentin";
+    pair_4.password = "IngloriousBastards";
     pairs.Add(pair_4);
+
+    PasswordStorageEntry pair_5;
+    pair_5.nickname = "Roman";
+    pair_5.password = "InadequatePeople";
     pairs.Add(pair_5);
+
 
     CheckUserPassword(pairs);
 

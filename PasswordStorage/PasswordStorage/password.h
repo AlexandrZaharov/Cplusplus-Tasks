@@ -2,6 +2,7 @@
 #include <ostream>
 #include "HashTable.h"
 
+
 class PasswordStorage
 {
 
@@ -10,7 +11,7 @@ class PasswordStorage
 public:
 
     PasswordStorage(const int size);
-    void Add(const std::pair<std::string, std::string>& new_pair); 
+    void Add(const PasswordStorageEntry& new_pair);
     bool Has(const std::string& try_nickname) const;
     int GetPasswordHash();
     void GetNicknamePassword(const std::string& nickname);

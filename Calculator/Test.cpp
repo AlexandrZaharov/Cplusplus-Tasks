@@ -98,8 +98,8 @@ void TestExpon()
 void TestSign()
 {
     int fails_count = 0;
-    ASSERT_EQUAL(Sign(2, 17), 1);
-    ASSERT_EQUAL(Sign(5, -14), 0);
+    ASSERT_EQUAL(Sign(50000, 50000), 1);
+    ASSERT_EQUAL(Sign(50000, -50000), 0);
 
     if (fails_count == 0)
     {
@@ -112,38 +112,38 @@ void TestSign()
     std::cerr << "---------------" << std::endl;
 }
 
-void TestNOD()
+void TestGetGCD()
 {
     int fails_count = 0;
-    ASSERT_EQUAL(NOD(15, 1), 1);
-    ASSERT_EQUAL(NOD(125, 50), 25);
-    ASSERT_EQUAL(NOD(-231, -140), 7);
+    ASSERT_EQUAL(GetGCD(15, 1), 1);
+    ASSERT_EQUAL(GetGCD(125, 50), 25);
+    ASSERT_EQUAL(GetGCD(-231, -140), 7);
 
     if (fails_count == 0)
     {
-        std::cerr << "TestNOD: Ok" << std::endl;
+        std::cerr << "TestGetGCD: Ok" << std::endl;
     }
     else
     {
-        std::cerr << "TestNOD fails. fails count: " << fails_count << std::endl;
+        std::cerr << "TestGetGCD fails. fails count: " << fails_count << std::endl;
     }
     std::cerr << "---------------" << std::endl;
 }
 
-void TestNOK()
+void TestGetLCM()
 {
     int fails_count = 0;
-    ASSERT_EQUAL(NOK(15, 1), 15);
-    ASSERT_EQUAL(NOK(-145, -45), 1305);
-    ASSERT_EQUAL(NOK(125, 50), 250);
+    ASSERT_EQUAL(GetLCM(50000, 50000), 50000);
+    ASSERT_EQUAL(GetLCM(-145, -45), 1305);
+    ASSERT_EQUAL(GetLCM(125, 50), 250);
 
     if (fails_count == 0)
     {
-        std::cerr << "TestNOK: Ok" << std::endl;
+        std::cerr << "TestGetLCM: Ok" << std::endl;
     }
     else
     {
-        std::cerr << "TestNOK fails. fails count: " << fails_count << std::endl;
+        std::cerr << "TestGetLCM fails. fails count: " << fails_count << std::endl;
     }
     std::cerr << "---------------" << std::endl;
 }
@@ -157,7 +157,7 @@ int main()
     TestMultiply();
     TestExpon();
     TestSign();
-    TestNOD();
-    TestNOK();
+    TestGetGCD();
+    TestGetLCM();
     return 0;
 }
