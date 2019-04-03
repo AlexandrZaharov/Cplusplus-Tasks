@@ -41,6 +41,7 @@ Matrix::Matrix(const size_t height, const size_t width)
     for (size_t i = 0; i < height; i++)
     {
         std::vector<int> matrix_line;
+        matrix_line.reserve(width);
         for (size_t j = 0; j < width; j++)
         {
             matrix_line.push_back(0);
@@ -116,14 +117,14 @@ Matrix Matrix::operator+(const Matrix& rhs)
 
 Matrix MatrixMultiplication(const Matrix& lhs, const Matrix& rhs, const size_t begin_pos, const size_t end_pos)
 {
-    Matrix rhs_transposed = rhs.Transpose();
+    Matrix const rhs_transposed = rhs.Transpose();
     Matrix new_matrix(lhs.GetHeight(), rhs.GetWidth());
     int element = 0;
     for (size_t i = begin_pos; i < end_pos; ++i)
     {
         for (size_t j = 0; j < new_matrix.GetWidth(); ++j)
         {
-            size_t length = lhs.GetWidth();
+            const size_t length = lhs.GetWidth();
             for (size_t k = 0; k < length; ++k)
             {
                 element += lhs.GetValue(i, k) * rhs_transposed.GetValue(j, k);
@@ -141,7 +142,6 @@ Matrix Matrix::operator*(const Matrix& rhs)
     {
         Matrix result(data_.size(), rhs.GetWidth());
 
-        {LOG_DURATION("parallel matrix")
         const int threads_count = 4;
         std::vector<std::future<Matrix>> partials;
         partials.reserve(threads_count);
@@ -157,13 +157,6 @@ Matrix Matrix::operator*(const Matrix& rhs)
                 MatrixMultiplication, *this, rhs, begin_pos, end_pos
             );
             partials.push_back(std::move(partial_of_matrix_multiplication));
-        }
-
-        for (size_t i = 0; i < threads_count; ++i)
-        {
-            std::cerr << "Waiting thread #" << i << std::endl;
-            result = result + partials[i].get();
-        }
         }
     return result;
     }
