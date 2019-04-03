@@ -1,0 +1,37 @@
+﻿  profile.cpp
+  matrix.cpp
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\future(263): error C2512: 'Matrix': no appropriate default constructor available
+  c:\users\elnin\documents\visual studio 2015\projects\parallelmatrix\parallelmatrix\matrix.h(9): note: see declaration of 'Matrix'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\future(255): note: while compiling class template member function 'std::_Associated_state<_Ty>::_Associated_state(std::_Deleter_base<_Ty> *)'
+          with
+          [
+              _Ty=Matrix
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\future(582): note: see reference to function template instantiation 'std::_Associated_state<_Ty>::_Associated_state(std::_Deleter_base<_Ty> *)' being compiled
+          with
+          [
+              _Ty=Matrix
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\future(1024): note: see reference to class template instantiation 'std::_Associated_state<_Ty>' being compiled
+          with
+          [
+              _Ty=Matrix
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\future(1020): note: while compiling class template member function 'Matrix &std::_State_manager<_Ty>::_Get_value(void) const'
+          with
+          [
+              _Ty=Matrix
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\future(1144): note: see reference to function template instantiation 'Matrix &std::_State_manager<_Ty>::_Get_value(void) const' being compiled
+          with
+          [
+              _Ty=Matrix
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\future(1113): note: see reference to class template instantiation 'std::_State_manager<_Ty>' being compiled
+          with
+          [
+              _Ty=Matrix
+          ]
+  c:\users\elnin\documents\visual studio 2015\projects\parallelmatrix\parallelmatrix\matrix.cpp(156): note: see reference to class template instantiation 'std::future<Matrix>' being compiled
+  main.cpp
+  Generating Code...
