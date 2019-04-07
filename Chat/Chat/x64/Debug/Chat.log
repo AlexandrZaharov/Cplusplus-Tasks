@@ -1,0 +1,6 @@
+﻿  chat.cpp
+c:\users\elnin\documents\visual studio 2015\projects\chat\chat\chat.cpp(187): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\elnin\documents\visual studio 2015\projects\chat\chat\chat.cpp(187): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+c:\users\elnin\documents\visual studio 2015\projects\chat\chat\chat.cpp(238): warning C4018: '<': signed/unsigned mismatch
+  Chat.vcxproj -> C:\Users\elnin\Documents\Visual Studio 2015\Projects\Chat\x64\Debug\Chat.exe
+  Chat.vcxproj -> C:\Users\elnin\Documents\Visual Studio 2015\Projects\Chat\x64\Debug\Chat.pdb (Full PDB)
