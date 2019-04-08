@@ -232,18 +232,11 @@ void RecieveAndPrintMessages(const int my_port,
         }
 
         // Printing recieved message 
-        std::string user_message;
-        user_message.reserve(received_message_size);
-
-        for (int i = 0; i < received_message_size; i++)
-        {
-            user_message.push_back(received_message_buf[i]);
-        }
 
         out_stream << "Remote person: ";
-        out_stream << DecodeString(user_message);
+        std::string remote_message(received_message_buf, received_message_size);
+        out_stream << DecodeString(remote_message);
         out_stream << std::endl;
-
         if (WSAGetLastError() == WSAECONNRESET)
         {
             out_stream << "*** remote disconnected ***" << std::endl;
