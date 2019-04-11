@@ -39,7 +39,7 @@ public:
         const sf::Vector2f acceleration,
         const float radius);
 
-    Particle& GetParticleByID(const ParticleID particle_id);
+    const Particle& GetParticleByID(const ParticleID particle_id);
 
     void Push(const sf::Vector2f delta_velocity);
 

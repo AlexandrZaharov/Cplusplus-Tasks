@@ -75,7 +75,7 @@ ParticleID ParticleSystem::AddParticle(sf::Vector2f position,
 }
 
 
-Particle& ParticleSystem::GetParticleByID(const ParticleID particle_id)
+const Particle& ParticleSystem::GetParticleByID(const ParticleID particle_id)
 {
     return particles_[particle_id];
 }

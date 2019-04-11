@@ -7,27 +7,27 @@ Game::Game()
 {
     particles_.AddParticle(sf::Vector2f(WINDOW_SIZES.x / 1.0f, WINDOW_SIZES.y / 1.0f),
         sf::Vector2f(0, 0),
-        sf::Vector2f(0, 100.0f),
+        sf::Vector2f(0, 500.0f),
         20.0f);
 
     particles_.AddParticle(sf::Vector2f(WINDOW_SIZES.x / 2.0f, WINDOW_SIZES.y / 2.0f),
         sf::Vector2f(0, 0),
-        sf::Vector2f(0, 50.0f),
+        sf::Vector2f(0, 500.0f),
         20.0f);
 
     particles_.AddParticle(sf::Vector2f(WINDOW_SIZES.x / 3.0f, WINDOW_SIZES.y / 3.0f),
         sf::Vector2f(0, 0),
-        sf::Vector2f(0, 25.0f),
+        sf::Vector2f(0, 500.0f),
         40.0f);
 
     particles_.AddParticle(sf::Vector2f(WINDOW_SIZES.x / 4.0f, WINDOW_SIZES.y / 4.0f),
         sf::Vector2f(0, 0),
-        sf::Vector2f(0, 10.0f),
+        sf::Vector2f(0, 500.0f),
         40.0f);
 
     particles_.AddParticle(sf::Vector2f(WINDOW_SIZES.x / 5.0f, WINDOW_SIZES.y / 5.0f),
         sf::Vector2f(0, 0),
-        sf::Vector2f(0, 1.0f),
+        sf::Vector2f(0, 500.0f),
         50.0f);
 }
 
@@ -59,7 +59,7 @@ void Game::Run()
 void Game::HandleInput()
 {
     sf::Vector2f increment(0, 0);
-    const float delta = 1000.0f;
+    const float delta = 100.0f;
 
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
