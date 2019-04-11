@@ -1,0 +1,9 @@
+﻿  game.cpp
+c:\users\elnin\documents\visual studio 2015\projects\textureforest\textureforest\game.cpp(16): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+c:\users\elnin\documents\visual studio 2015\projects\textureforest\textureforest\game.cpp(21): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+c:\users\elnin\documents\visual studio 2015\projects\textureforest\textureforest\game.cpp(26): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+c:\users\elnin\documents\visual studio 2015\projects\textureforest\textureforest\game.cpp(67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\elnin\documents\visual studio 2015\projects\textureforest\textureforest\game.cpp(72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\elnin\documents\visual studio 2015\projects\textureforest\textureforest\game.cpp(77): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  TextureForest.vcxproj -> C:\Users\elnin\Documents\Visual Studio 2015\Projects\TextureForest\x64\Debug\TextureForest.exe
+  TextureForest.vcxproj -> C:\Users\elnin\Documents\Visual Studio 2015\Projects\TextureForest\x64\Debug\TextureForest.pdb (Full PDB)
