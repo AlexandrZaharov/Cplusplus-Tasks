@@ -19,6 +19,7 @@ public:
     bool CheckIsDone();
     sf::Vector2u GetWindowSize();
 
+    sf::RenderWindow& GetWindow();
 
 private:
     void Create();

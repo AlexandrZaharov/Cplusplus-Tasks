@@ -87,6 +87,11 @@ void Window::Create()
 }
 
 
+sf::RenderWindow& Window::GetWindow()
+{
+    return window_;
+}
+
 
 void Window::Destroy()
 {

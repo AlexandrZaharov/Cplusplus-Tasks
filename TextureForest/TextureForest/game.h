@@ -16,18 +16,7 @@ public:
     void HandleInput();
 
 private:
-    Window main_window_;
 
     Forest forest_;
-
-    sf::Texture grow_tree_;
-    sf::CircleShape grow_tree_circle;
-
-    sf::Texture burn_tree_; 
-    sf::CircleShape burn_tree_circle;  
-
-    sf::Texture dead_tree_;
-    sf::CircleShape dead_tree_circle;
-  
-    const int image_radius_ = 30;
+    Window main_window_;
 };
