@@ -1,0 +1,8 @@
+﻿  partical_system.cpp
+c:\users\elnin\documents\visual studio 2015\projects\graphic\graphic\partical_system.cpp(44): error C2143: syntax error: missing ';' before 'ParticleSystem::AddParticle'
+c:\users\elnin\documents\visual studio 2015\projects\graphic\graphic\partical_system.cpp(44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\elnin\documents\visual studio 2015\projects\graphic\graphic\partical_system.cpp(49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\elnin\documents\visual studio 2015\projects\graphic\graphic\partical_system.cpp(49): error C2556: 'int ParticleSystem::AddParticle(sf::Vector2f,sf::Vector2f,sf::Vector2f,float,float)': overloaded function differs only by return type from 'ParticleSystem::ParticleID ParticleSystem::AddParticle(const sf::Vector2f,const sf::Vector2f,const sf::Vector2f,const float,const float)'
+  c:\users\elnin\documents\visual studio 2015\projects\graphic\graphic\partical_system.h(41): note: see declaration of 'ParticleSystem::AddParticle'
+c:\users\elnin\documents\visual studio 2015\projects\graphic\graphic\partical_system.cpp(44): error C2371: 'ParticleSystem::AddParticle': redefinition; different basic types
+  c:\users\elnin\documents\visual studio 2015\projects\graphic\graphic\partical_system.h(41): note: see declaration of 'ParticleSystem::AddParticle'

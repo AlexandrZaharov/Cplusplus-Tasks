@@ -2,7 +2,7 @@
 #include "utils.h"
 
 extern const sf::Vector2u WINDOW_SIZES;
-using ParticleID = size_t;
+//using ParticleID = size_t;
 
 
 Particle::Particle(const sf::Vector2f position, const sf::Vector2f velocity, const sf::Vector2f acceleration, const float radius, const float mass)
@@ -135,7 +135,7 @@ void ParticleSystem::Push(const sf::Vector2f delta_velocity)
 
 void ParticleSystem::ApplyGravity()
 {
-    const sf::Vector2f acceleration_g(0.0f, 9.8f);
+    const sf::Vector2f acceleration_g(0.0f, 98.0f);
     for (Particle& particle : particles_)
     {
         particle.acceleration_ += acceleration_g;
