@@ -39,6 +39,6 @@ void Game::Update()
 void Game::Render()
 {
     main_window_.BeginDraw();
-    forest_.Render();
+    main_window_.Draw(forest_);
     main_window_.EndDraw();
 }

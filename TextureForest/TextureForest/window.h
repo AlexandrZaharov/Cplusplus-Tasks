@@ -2,7 +2,10 @@
 
 #include <string>
 #include <SFML/Graphics.hpp>
+//#include "forest.h"
+//#include "game.h"
 
+class Forest;
 
 
 class Window
@@ -14,6 +17,7 @@ public:
     void Update();
     void BeginDraw();
     void Draw(sf::Drawable& drawable_object);
+    void Draw(Forest& forest);
     void EndDraw();
 
     bool CheckIsDone();
@@ -30,3 +34,4 @@ private:
     std::string default_title_;
     sf::Vector2u default_size_;
 };
+

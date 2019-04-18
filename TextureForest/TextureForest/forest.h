@@ -4,7 +4,8 @@
 #include <vector>
 #include <istream>
 #include <ostream>
-#include "window.h"
+//#include "window.h"
+#include <SFML/Graphics.hpp>
 
 class Forest
 {
@@ -12,6 +13,15 @@ class Forest
     friend std::ostream& operator<<(std::ostream& os, const Forest& matrix);
 
 public:
+
+    struct Tree
+    {
+        int health_ = 10;
+        int strength_ = 5;
+        size_t current_status_ = 0;
+    };
+
+    const std::vector<std::vector<Tree>>& GetData() const;
 
     enum { GROW_TREE, BURN_TREE, DEAD_TREE };
 
@@ -22,27 +32,16 @@ public:
     size_t GetHeight() const;
     size_t GetWidth() const;
 
-    //const std::vector<std::vector<Tree>>& GetData() const;
-
     void SetValue(const size_t height_index, const size_t width_index,
         const int health, const int strength, const int current_status);
 
     void Update();
     
-    void Render();
+    void Render(sf::RenderWindow& window);
 
     int GetBurnNeighbour(int y_coord, int x_coord);
 
 private:
-
-
-    struct Tree
-    {
-        int health_ = 10;
-        int strength_ = 5;
-        size_t current_status_ = 0;
-    };
-
     std::vector<std::vector<Tree>> data_;
 
     sf::Texture grow_tree_;

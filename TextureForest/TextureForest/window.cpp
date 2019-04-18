@@ -1,4 +1,5 @@
 #include "window.h"
+#include "forest.h"
 
 
 
@@ -58,6 +59,11 @@ void Window::Draw(sf::Drawable& drawable_object)
     window_.draw(drawable_object);
 }
 
+
+void Window::Draw(Forest& forest)
+{
+    forest.Render(window_);
+}
 
 
 void Window::EndDraw()

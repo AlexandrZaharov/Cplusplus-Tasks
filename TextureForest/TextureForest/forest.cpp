@@ -60,10 +60,10 @@ size_t Forest::GetWidth() const
 }
 
 
-//const std::vector<std::vector<Tree>>& Forest::GetData() const
-//{
-//    return data_;
-//}
+const std::vector<std::vector<Forest::Tree>>& Forest::GetData() const
+{
+    return data_;
+}
 
 
 void Forest::SetValue(const size_t height_index, const size_t width_index,
@@ -131,29 +131,29 @@ void Forest::Update()
 }
 
 
-void Forest::Render()
+void Forest::Render(sf::RenderWindow& window)
 {
     int image_x_coord = 0;
     int image_y_coord = 0;
 
-    for (size_t i = 0; i < forest_.GetHeight(); i++)
+    for (size_t i = 0; i < GetHeight(); i++)
     {
-        for (size_t j = 0; j < forest_.GetWidth(); j++)
+        for (size_t j = 0; j < GetWidth(); j++)
         {
-            if (forest_.GetData()[i][j].current_status_ == GROW_TREE)
+            if (GetData()[i][j].current_status_ == GROW_TREE)
             {
                 grow_tree_circle.setPosition(sf::Vector2f(image_x_coord, image_y_coord));
-                main_window_.Draw(grow_tree_circle);
+                window.draw(grow_tree_circle);
             }
-            if (forest_.GetData()[i][j].current_status_ == BURN_TREE)
+            if (GetData()[i][j].current_status_ == BURN_TREE)
             {
                 burn_tree_circle.setPosition(sf::Vector2f(image_x_coord, image_y_coord));
-                main_window_.Draw(burn_tree_circle);
+                window.draw(burn_tree_circle);
             }
-            if (forest_.GetData()[i][j].current_status_ == DEAD_TREE)
+            if (GetData()[i][j].current_status_ == DEAD_TREE)
             {
                 dead_tree_circle.setPosition(sf::Vector2f(image_x_coord, image_y_coord));
-                main_window_.Draw(dead_tree_circle);
+                window.draw(dead_tree_circle);
             }
             image_x_coord += 2 * image_radius_;
         }
@@ -195,15 +195,15 @@ std::ostream& operator<<(std::ostream& output_stream, const Forest& matrix)
     {
         for (size_t x = 0; x < matrix.GetWidth(); x++)
         {
-            if (matrix.GetCurrentStatus(y, x) == GROW_TREE)
+            if (matrix.GetCurrentStatus(y, x) == Forest::GROW_TREE)
             {
                 output_stream << '|' << " ";
             }
-            if (matrix.GetCurrentStatus(y, x) == BURN_TREE)
+            if (matrix.GetCurrentStatus(y, x) == Forest::BURN_TREE)
             {
                 output_stream << '*' << " ";
             }
-            if (matrix.GetCurrentStatus(y, x) == DEAD_TREE)
+            if (matrix.GetCurrentStatus(y, x) == Forest::DEAD_TREE)
             {
                 output_stream << ' ' << " ";
             }

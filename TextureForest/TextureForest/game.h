@@ -4,6 +4,9 @@
 #include "forest.h"
 #include "window.h"
 
+//class Window;
+
+
 class Game
 {
 public:
