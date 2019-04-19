@@ -2,7 +2,6 @@
 #include "utils.h"
 
 extern const sf::Vector2u WINDOW_SIZES;
-//using ParticleID = size_t;
 
 
 Particle::Particle(const sf::Vector2f position, const sf::Vector2f velocity, const sf::Vector2f acceleration, const float radius, const float mass)
@@ -41,7 +40,7 @@ void Particle::Render(sf::RenderWindow& window)
 }
 
 
-ParticleID ParticleSystem::AddParticle(sf::Vector2f position, 
+ParticleSystem::ParticleID ParticleSystem::AddParticle(sf::Vector2f position,
     sf::Vector2f velocity,
     sf::Vector2f acceleration, 
     float radius,
