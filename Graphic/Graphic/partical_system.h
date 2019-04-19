@@ -4,11 +4,14 @@
 
 class Particle
 {
+    friend class ParticleSystem;
+
 public:
     Particle(const sf::Vector2f position_, 
         const sf::Vector2f velocity_,
         const sf::Vector2f acceleration_,
-        const float radius_);
+        const float radius_,
+        const float mass_);
     virtual ~Particle() = default;
 
     void Push(const sf::Vector2f increment);
@@ -21,6 +24,7 @@ private:
     sf::Vector2f velocity_;
     sf::Vector2f acceleration_;
     float radius_;
+    float mass_;
 
     sf::CircleShape shape_;
 
@@ -37,9 +41,18 @@ public:
     ParticleID AddParticle(const sf::Vector2f position,
         const sf::Vector2f velocity,
         const sf::Vector2f acceleration,
-        const float radius);
+        const float radius,
+        const float mass);
 
-    const Particle& GetParticleByID(const ParticleID particle_id);
+    const Particle& GetParticleByID(const ParticleID particle_id) const;
+
+    void AddLink(const ParticleID particle1_id,
+        const ParticleID particle2_id,
+        const float stiffness
+    );
+
+    float ComputeDistanceBetween(const ParticleID particle1_id,
+        const ParticleID particle2_id) const;
 
     void Push(const sf::Vector2f delta_velocity);
 
@@ -47,5 +60,19 @@ public:
     void Render(sf::RenderWindow& window);
 
 private:
+
+    void ApplyGravity();
+    void SolveLinks();
+    void HandleCollisions();
+
+    struct Link
+    {
+        ParticleID particle1_id;
+        ParticleID particle2_id;
+        float initial_length;
+        float stiffness;
+    };
+
     std::vector<Particle> particles_;
+    std::vector<Link> links_;
 };

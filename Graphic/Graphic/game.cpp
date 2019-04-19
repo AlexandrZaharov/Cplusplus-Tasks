@@ -5,30 +5,85 @@ extern const sf::Vector2u WINDOW_SIZES(800, 600);
 Game::Game()
     : main_window_("Balls", WINDOW_SIZES)
 {
-    particles_.AddParticle(sf::Vector2f(WINDOW_SIZES.x / 1.0f, WINDOW_SIZES.y / 1.0f),
-        sf::Vector2f(0, 0),
-        sf::Vector2f(0, 500.0f),
-        20.0f);
+    ParticleSystem::ParticleID particle1_id = particles_.AddParticle(
+        sf::Vector2f(100.0f, 100.0f), // position 
+        sf::Vector2f(0, 0), // velocity 
+        sf::Vector2f(0, 0), // acceleration 
+        25.0f, // radius 
+        15000.0f // mass 
+    );
 
-    particles_.AddParticle(sf::Vector2f(WINDOW_SIZES.x / 2.0f, WINDOW_SIZES.y / 2.0f),
-        sf::Vector2f(0, 0),
-        sf::Vector2f(0, 500.0f),
-        20.0f);
+    ParticleSystem::ParticleID particle2_id = particles_.AddParticle(
+        sf::Vector2f(100.0f, 400.0f), // position 
+        sf::Vector2f(0, 0), // velocity 
+        sf::Vector2f(0, 0), // acceleration 
+        25.0f, // radius 
+        15000.0f // mass 
+    );
 
-    particles_.AddParticle(sf::Vector2f(WINDOW_SIZES.x / 3.0f, WINDOW_SIZES.y / 3.0f),
+    ParticleSystem::ParticleID particle3_id = particles_.AddParticle(
+        sf::Vector2f(400.0f, 100.0f), // position 
+        sf::Vector2f(0, 0), // velocity 
+        sf::Vector2f(0, 0), // acceleration 
+        25.0f, // radius 
+        15000.0f // mass 
+    );
+
+    ParticleSystem::ParticleID particle4_id = particles_.AddParticle(
+        sf::Vector2f(400.0f, 400.0f), // position 
+        sf::Vector2f(0, 0), // velocity 
+        sf::Vector2f(0, 0), // acceleration 
+        25.0f, // radius 
+        15000.0f // mass 
+    );
+
+    particles_.AddLink(
+        particle1_id, particle2_id,
+        1e5 // stiffness 
+    );
+
+    particles_.AddLink(
+        particle2_id, particle3_id,
+        1e5 // stiffness 
+    );
+
+    particles_.AddLink(
+        particle3_id, particle4_id,
+        1e5 // stiffness 
+    );
+
+    particles_.AddLink(
+        particle4_id, particle1_id,
+        1e5 // stiffness 
+    );
+
+    particles_.AddLink(
+        particle1_id, particle3_id,
+        1e5 // stiffness 
+    );
+
+    particles_.AddLink(
+        particle4_id, particle2_id,
+        1e5 // stiffness 
+    );
+
+    /*particles_.AddParticle(sf::Vector2f(WINDOW_SIZES.x / 3.0f, WINDOW_SIZES.y / 3.0f),
         sf::Vector2f(0, 0),
-        sf::Vector2f(0, 500.0f),
-        40.0f);
+        sf::Vector2f(0, 0.0f),
+        40.0f,
+        200.0f);
 
     particles_.AddParticle(sf::Vector2f(WINDOW_SIZES.x / 4.0f, WINDOW_SIZES.y / 4.0f),
         sf::Vector2f(0, 0),
-        sf::Vector2f(0, 500.0f),
-        40.0f);
+        sf::Vector2f(0, 0.0f),
+        40.0f,
+        200.0f);
 
     particles_.AddParticle(sf::Vector2f(WINDOW_SIZES.x / 5.0f, WINDOW_SIZES.y / 5.0f),
         sf::Vector2f(0, 0),
-        sf::Vector2f(0, 500.0f),
-        50.0f);
+        sf::Vector2f(0, 0.0f),
+        50.0f,
+        300.0f);*/
 }
 
 
@@ -59,7 +114,7 @@ void Game::Run()
 void Game::HandleInput()
 {
     sf::Vector2f increment(0, 0);
-    const float delta = 100.0f;
+    const float delta = 15.0f;
 
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
