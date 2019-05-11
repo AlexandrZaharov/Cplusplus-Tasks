@@ -133,8 +133,8 @@ void Snake::Grow()
         Snake::Segment new_body_part;
         new_body_part.color = sf::Color::Yellow;
 
-        Snake::Segment const& last_body_part = body_[body_size - 1];
-        Snake::Segment const& penultimate_body_part = body_[body_size - 2];
+        const Snake::Segment& last_body_part = body_[body_size - 1];
+        const Snake::Segment& penultimate_body_part = body_[body_size - 2];
 
         if (last_body_part.position.x == penultimate_body_part.position.x)
         {
