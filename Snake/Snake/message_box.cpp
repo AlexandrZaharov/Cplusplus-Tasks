@@ -15,6 +15,7 @@ MessageBox::MessageBox(
     Create(position, sizes, char_size);
 }
 
+
 void MessageBox::Create(
     const sf::Vector2i& position, const sf::Vector2i& sizes,
     const int char_size)
@@ -28,10 +29,12 @@ void MessageBox::Create(
     all_messages_.setFillColor(sf::Color::White);
 }
 
+
 void MessageBox::Add(const std::string& new_message)
 {
     messages_.push_back(new_message);
 }
+
 
 void MessageBox::Update(const float dt)
 {
@@ -48,6 +51,7 @@ void MessageBox::Update(const float dt)
         messages_.erase(messages_.begin());
     }
 }
+
 
 void MessageBox::Render(sf::RenderWindow& window)
 {

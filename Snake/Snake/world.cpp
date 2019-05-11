@@ -40,7 +40,6 @@ void World::Render(sf::RenderWindow& window)
 
 void World::HandleCollisions()
 {
-
     if (snake_.CheckSelfCollision())
     {
         snake_.DecreaseLivesByOne();

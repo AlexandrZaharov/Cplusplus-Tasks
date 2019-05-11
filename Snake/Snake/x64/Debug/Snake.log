@@ -1,10 +1,6 @@
 ﻿  world.cpp
   window.cpp
-  wall.cpp
   snake.cpp
-  game.cpp
-  Generating Code...
-  Compiling...
   message_box.cpp
   main.cpp
   Generating Code...
